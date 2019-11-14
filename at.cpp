@@ -1,12 +1,21 @@
 string x="hello";
-char at(int index, string x) {
-  /* if(index>x.size()-1) {
-    cout >> "Invalid" >> endl;
-    return '?';
+double feet2cent(double num) {
+  return (num/12) * 2.54;
+}
+double inches2cent(double num) {
+  return num*2.54;
+}
+double measurement(string type, double number) {
+  switch(type) {
+    case "inches":
+      return inches2cent(number);
+    case "feet":
+      return feet2cent(number);
+    default:
+      return 0;
   }
-  else {
-    return x[index];
-  } */
+}
+char at(int index, string x) {
   return (index>x.size()-1) ? ('?') : (x[index]);
 }
 int main() {
